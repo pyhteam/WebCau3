@@ -108,9 +108,10 @@ namespace WebCau3.Lib
 
             DataTable dataTable = new DataTable();
             dataTable.Load(sqlDataReader);
+            int id = 0; ;
             if (dataTable.Rows.Count > 0)
             {
-                status = dataTable.Rows[0]["Id"].ToString();
+                id = Convert.ToInt32(dataTable.Rows[0]["Id"].ToString());
             }
             if (dataTable.Rows.Count >= 0)
             {
