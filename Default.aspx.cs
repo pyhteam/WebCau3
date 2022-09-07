@@ -30,7 +30,7 @@ namespace WebCau3
         {
             // load to gvList
             var tiemVacXins = databaseService.GetAllTiemVacXin();
-            gvList.DataSourceID = null;
+            gvList.DataSourceID = "SqlDataSource2";
             gvList.DataSource = tiemVacXins;
             gvList.DataBind();
 
@@ -139,7 +139,7 @@ namespace WebCau3
             }
             tiemVacXin.Status = daTiem;
             databaseService.UpdateTiemVacXin(tiemVacXin);
-            LoadData();
+            // LoadData();
         }
 
         protected void btnNamTiemVacXin_Click(object sender, EventArgs e)
@@ -152,7 +152,9 @@ namespace WebCau3
             }
             else
             {
-                gvList.DataSource = tiemVacXins;
+
+                ListView1.DataSource = tiemVacXins;
+                ListView1.DataBind();
             }
         }
 

@@ -48,8 +48,8 @@
                     CssClass="btn btn-success" />
                 <asp:Button ID="btnEditMan" runat="server" Text="Edit" OnClick="btnEditMan_Click"
                     CssClass="btn btn-primary" />
-                <asp:Button ID="btnNamTiemVacXin" runat="server" Text="Nam Đã Tiêm"
-                    CssClass="btn btn-primary" OnClick="btnNamTiemVacXin_Click" />
+                <asp:Button ID="btnNamTiemVacXin" runat="server" Text="Nam Đã Tiêm" CssClass="btn btn-primary"
+                    OnClick="btnNamTiemVacXin_Click" />
                 <asp:Button ID="SoLuongNguoiDaTien" runat="server" Text="Sô lượng đã tiêm"
                     CssClass="btn btn-primary" OnClick="SoLuongNguoiDaTien_Click" />
 
@@ -59,7 +59,8 @@
             <!-- gird view -->
             <asp:GridView ID="gvList" runat="server" AutoGenerateColumns="False" DataKeyNames="Id"
                 DataSourceID="SqlDataSource2" CssClass=" table table-responsive table-hover" Width="818px"
-                OnSelectedIndexChanged="gvList_SelectedIndexChanged" AllowSorting="True" AutoGenerateSelectButton="True">
+                OnSelectedIndexChanged="gvList_SelectedIndexChanged" AllowSorting="True"
+                AutoGenerateSelectButton="True">
                 <Columns>
                     <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True"
                         SortExpression="Id" />
@@ -83,6 +84,9 @@
             <asp:SqlDataSource ID="SqlDataSource2" runat="server"
                 ConnectionString="<%$ ConnectionStrings:Cau3ASPNETConnectionString %>"
                 SelectCommand="SELECT * FROM [TiemVacXin]"></asp:SqlDataSource>
+        </div>
+        <div class="col-8">
+            <asp:ListView ID="ListView1" runat="server"></asp:ListView>
         </div>
     </div>
 
