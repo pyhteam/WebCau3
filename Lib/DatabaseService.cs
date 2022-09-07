@@ -105,10 +105,18 @@ namespace WebCau3.Lib
             sqlCommand.CommandText = "SELECT * FROM XiNghiep WHERE TenXiNghiep = @Name";
             sqlCommand.Parameters.AddWithValue("@Name", status);
             sqlDataReader = sqlCommand.ExecuteReader();
+
             DataTable dataTable = new DataTable();
             dataTable.Load(sqlDataReader);
+            if (dataTable.Rows.Count > 0)
+            {
+                status = dataTable.Rows[0]["Id"].ToString();
+            }
+            if (dataTable.Rows.Count >= 0)
+            {
+                return null;
+            }
 
-            int id = 0;
 
             sqlCommand.CommandText = "SELECT * FROM TiemVacXin WHERE GioiTinh = @GioiTinh AND XiNghiepId = @xiNghiepId";
             sqlCommand.Parameters.AddWithValue("@GioiTinh", gioiTinh);
